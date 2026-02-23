@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allan Nenkam | Data & AI Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* 🔥 animated gradient background */
+    body {
+      background: linear-gradient(-45deg,#020617,#020617,#020617,#0f172a);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* CV preview tooltip */
+    .cv-preview {
+      position: relative;
+    }
+
+    .cv-preview img {
+      position: absolute;
+      top: -220px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      border-radius: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      border: 2px solid #22d3ee;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .cv-preview:hover img {
+      opacity: 1;
+      top: -200px;
+    }
+  </style>
+</head>
+<body class="text-slate-100">
+
+  <!-- NAVBAR -->
+  <header class="fixed w-full bg-slate-900/80 backdrop-blur z-50 border-b border-slate-800">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-cyan-400">Allan Nenkam</h1>
+
+      <div class="hidden md:flex space-x-6 text-sm">
+        <a href="#about" class="hover:text-cyan-400">À propos</a>
+        <a href="#skills" class="hover:text-cyan-400">Compétences</a>
+        <a href="#projects" class="hover:text-cyan-400">Projets</a>
+        <a href="#contact" class="hover:text-cyan-400">Contact</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-cyan-400">☰</button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 space-y-3 text-sm">
+      <a href="#about" class="block hover:text-cyan-400">À propos</a>
+      <a href="#skills" class="block hover:text-cyan-400">Compétences</a>
+      <a href="#projects" class="block hover:text-cyan-400">Projets</a>
+      <a href="#contact" class="block hover:text-cyan-400">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center text-center px-6">
+    <div class="max-w-4xl">
+
+      <!-- PHOTO -->
+      <div class="flex justify-center mb-8">
+        <div class="w-40 h-40 rounded-full border-4 border-cyan-400 overflow-hidden shadow-xl">
+          <img src="assets/photo.jpg" alt="Photo Allan" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">
+        Data Science • IA • Forecasting
+      </h2>
+
+      <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+        Étudiant en Sciences des Données et Intelligence Artificielle à l'ENSPD.
+        Passionné par la prévision, le machine learning et les systèmes intelligents.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold shadow-lg">
+          Voir mes projets
+        </a>
+
+        <!-- 🔥 CV download with preview -->
+        <div class="cv-preview">
+          <a href="assets/CV_Allan_Nenkam.pdf" download
+            class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold inline-block">
+            Télécharger mon CV
+          </a>
+          <!-- 👉 mets une capture de ton CV ici si tu veux -->
+         <img src="assets/cv-preview.jpg" alt="Aperçu CV" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-20">
+    <h3 class="text-3xl font-bold mb-6 text-cyan-400">À propos de moi</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Je suis Allan Nenkam, étudiant en SDIA3 à l'ENSPD. Je développe des solutions
+      basées sur la data pour aider à la prise de décision. Mes domaines principaux
+      sont l'analyse de données, les séries temporelles, le machine learning et
+      l'ingénierie logicielle appliquée.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="bg-slate-900 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-12 text-cyan-400">Compétences</h3>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800 p-6 rounded-2xl shadow">
+          <h4 class="font-bold mb-4">📊 Data Science</h4>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li>Analyse exploratoire (EDA)</li>
+            <li>Séries temporelles</li>
+            <li>Forecasting</li>
+            <li>Tests statistiques</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-2xl shadow">
+          <h4 class="font-bold mb-4">🤖 Machine Learning</h4>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li>ARIMA / SARIMA</li>
+            <li>Régression</li>
+            <li>Validation de modèles</li>
+            <li>Analyse des résidus</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-2xl shadow">
+          <h4 class="font-bold mb-4">🌐 Développement & Data Engineering</h4>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li>HTML / CSS / JavaScript</li>
+            <li>PHP / MySQL</li>
+            <li>Python & R</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+    <h3 class="text-3xl font-bold mb-12 text-cyan-400">Projets phares</h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="font-bold text-lg mb-2">⚡ Prévision consommation ENEO</h4>
+        <p class="text-sm text-slate-400 mb-4">
+          Analyse de séries temporelles et modélisation SARIMA pour la prévision
+          de la consommation électrique.
+        </p>
+        <a target="_blank" href="https://github.com/Allanroch/consommation_eneo" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="font-bold text-lg mb-2">🏥 Diagnostic médical</h4>
+        <p class="text-sm text-slate-400 mb-4">
+          Application web permettant d'analyser les symptômes et proposer
+          des maladies probables.
+        </p>
+        <a target="_blank" href="https://github.com/Allanroch/diagnostic_medical" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="font-bold text-lg mb-2">📦 API de gestion de stock</h4>
+        <p class="text-sm text-slate-400 mb-4">
+          API permettant la gestion des produits, entrées/sorties et suivi du stock.
+        </p>
+        <a target="_blank" href="https://github.com/Allanroch/gestion_stock" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="font-bold text-lg mb-2">🎧 Package R — Analyse acoustique</h4>
+        <p class="text-sm text-slate-400 mb-4">
+          Package R basé sur la transformation de Householder et la décomposition QR.
+        </p>
+        <a target="_blank" href="https://github.com/Allanroch" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-slate-900 py-20">
+    <div class="max-w-3xl mx-auto text-center px-6">
+      <h3 class="text-3xl font-bold mb-6 text-cyan-400">Contact</h3>
+
+      <div class="text-slate-300 space-y-3 mb-8">
+        <p><strong>📞 Téléphone :</strong> <a href="tel:+237697606275" class="text-cyan-400">+237 697 606 275</a></p>
+        <p><strong>✉️ Email :</strong> <a href="mailto:nenkamallan@gmail.com" class="text-cyan-400">nenkamallan@gmail.com</a></p>
+        <p><strong>🌍 Nationalité :</strong> Camerounais</p>
+        <p><strong>📍 Adresse :</strong> Douala Logpom</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://github.com/Allanroch" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold">
+          Mon GitHub
+        </a>
+
+        <!-- 🔥 LinkedIn button (remplace ton lien) -->
+        <a href="#" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold">
+          Mon LinkedIn
+        </a>
+
+        <a href="mailto:nenkamallan@gmail.com" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold">
+          M'envoyer un email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 text-sm text-slate-500 border-t border-slate-800">
+    © 2026 Allan Nenkam — Portfolio Data & AI
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100','translate-y-0');
+        }
+      });
+    });
+
+    document.querySelectorAll('section').forEach(sec => {
+      sec.classList.add('opacity-0','translate-y-6','transition','duration-700');
+      observer.observe(sec);
+    });
+
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
+
+</body>
+</html>
