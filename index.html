@@ -9,7 +9,6 @@
   <style>
     html { scroll-behavior: smooth; }
 
-    /* 🔥 animated gradient background */
     body {
       background: linear-gradient(-45deg,#020617,#020617,#020617,#0f172a);
       background-size: 400% 400%;
@@ -22,10 +21,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* CV preview tooltip */
-    .cv-preview {
-      position: relative;
-    }
+    .cv-preview { position: relative; }
 
     .cv-preview img {
       position: absolute;
@@ -41,9 +37,34 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 
-    .cv-preview:hover img {
-      opacity: 1;
-      top: -200px;
+    .cv-preview:hover img { opacity: 1; top: -200px; }
+
+    /* 🔵 skill circle */
+    .skill-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: conic-gradient(#22d3ee var(--percent), #1e293b 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: auto;
+    }
+
+    .skill-circle::after {
+      content: "";
+      width: 95px;
+      height: 95px;
+      background: #020617;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .skill-text {
+      position: relative;
+      font-weight: bold;
+      color: #22d3ee;
     }
   </style>
 </head>
@@ -76,16 +97,13 @@
   <section class="min-h-screen flex items-center justify-center text-center px-6">
     <div class="max-w-4xl">
 
-      <!-- PHOTO -->
       <div class="flex justify-center mb-8">
         <div class="w-40 h-40 rounded-full border-4 border-cyan-400 overflow-hidden shadow-xl">
           <img src="assets/photo.jpg" alt="Photo Allan" class="w-full h-full object-cover" />
         </div>
       </div>
 
-      <h2 class="text-4xl md:text-6xl font-bold mb-6">
-        Data Science • IA • Forecasting
-      </h2>
+      <h2 class="text-4xl md:text-6xl font-bold mb-6">Data Science • IA • Forecasting</h2>
 
       <p class="text-slate-400 max-w-2xl mx-auto mb-8">
         Étudiant en Sciences des Données et Intelligence Artificielle à l'ENSPD.
@@ -93,32 +111,17 @@
       </p>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold shadow-lg">
-          Voir mes projets
-        </a>
+        <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold shadow-lg">Voir mes projets</a>
 
-        <!-- 🔥 CV download with preview -->
         <div class="cv-preview">
           <a href="assets/CV_Allan_Nenkam.pdf" download
             class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold inline-block">
             Télécharger mon CV
           </a>
-          <!-- 👉 mets une capture de ton CV ici si tu veux -->
          <img src="assets/cv-preview.jpg" alt="Aperçu CV" />
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="max-w-6xl mx-auto px-6 py-20">
-    <h3 class="text-3xl font-bold mb-6 text-cyan-400">À propos de moi</h3>
-    <p class="text-slate-300 leading-relaxed">
-      Je suis Allan Nenkam, étudiant en SDIA3 à l'ENSPD. Je développe des solutions
-      basées sur la data pour aider à la prise de décision. Mes domaines principaux
-      sont l'analyse de données, les séries temporelles, le machine learning et
-      l'ingénierie logicielle appliquée.
-    </p>
   </section>
 
   <!-- SKILLS -->
@@ -126,7 +129,9 @@
     <div class="max-w-6xl mx-auto px-6">
       <h3 class="text-3xl font-bold mb-12 text-cyan-400">Compétences</h3>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <!-- 🔷 Skill cards (comme sur ton image) -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+
         <div class="bg-slate-800 p-6 rounded-2xl shadow">
           <h4 class="font-bold mb-4">📊 Data Science</h4>
           <ul class="text-sm text-slate-300 space-y-2">
@@ -156,6 +161,72 @@
             <li>Git & GitHub</li>
           </ul>
         </div>
+
+      </div>
+
+      <!-- 🔵 Cercles de progression -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+
+        <div>
+          <div class="skill-circle" style="--percent:80%"><span class="skill-text">80%</span></div>
+          <p class="mt-3 text-sm">PHP</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:75%"><span class="skill-text">75%</span></div>
+          <p class="mt-3 text-sm">JavaScript</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:100%"><span class="skill-text">100%</span></div>
+          <p class="mt-3 text-sm">CSS</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:100%"><span class="skill-text">100%</span></div>
+          <p class="mt-3 text-sm">HTML</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:75%"><span class="skill-text">75%</span></div>
+          <p class="mt-3 text-sm">Python</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:80%"><span class="skill-text">80%</span></div>
+          <p class="mt-3 text-sm">R</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:95%"><span class="skill-text">95%</span></div>
+          <p class="mt-3 text-sm">Excel</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:85%"><span class="skill-text">85%</span></div>
+          <p class="mt-3 text-sm">Power BI</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:100%"><span class="skill-text">100%</span></div>
+          <p class="mt-3 text-sm">Français</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:60%"><span class="skill-text">60%</span></div>
+          <p class="mt-3 text-sm">Anglais</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:90%"><span class="skill-text">90%</span></div>
+          <p class="mt-3 text-sm">Data Analyst</p>
+        </div>
+
+        <div>
+          <div class="skill-circle" style="--percent:85%"><span class="skill-text">85%</span></div>
+          <p class="mt-3 text-sm">Data Scientist</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -168,36 +239,38 @@
 
       <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
         <h4 class="font-bold text-lg mb-2">⚡ Prévision consommation ENEO</h4>
-        <p class="text-sm text-slate-400 mb-4">
-          Analyse de séries temporelles et modélisation SARIMA pour la prévision
-          de la consommation électrique.
-        </p>
+        <p class="text-sm text-slate-400 mb-4">Analyse de séries temporelles et modélisation SARIMA pour la prévision de la consommation électrique.</p>
         <a target="_blank" href="https://github.com/Allanroch/consommation_eneo" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
       </div>
 
       <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
         <h4 class="font-bold text-lg mb-2">🏥 Diagnostic médical</h4>
-        <p class="text-sm text-slate-400 mb-4">
-          Application web permettant d'analyser les symptômes et proposer
-          des maladies probables.
-        </p>
+        <p class="text-sm text-slate-400 mb-4">Application web permettant d'analyser les symptômes et proposer des maladies probables.</p>
         <a target="_blank" href="https://github.com/Allanroch/diagnostic_medical" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
       </div>
 
       <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
         <h4 class="font-bold text-lg mb-2">📦 API de gestion de stock</h4>
-        <p class="text-sm text-slate-400 mb-4">
-          API permettant la gestion des produits, entrées/sorties et suivi du stock.
-        </p>
+        <p class="text-sm text-slate-400 mb-4">API permettant la gestion des produits, entrées/sorties et suivi du stock.</p>
         <a target="_blank" href="https://github.com/Allanroch/gestion_stock" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
       </div>
 
       <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
         <h4 class="font-bold text-lg mb-2">🎧 Package R — Analyse acoustique</h4>
-        <p class="text-sm text-slate-400 mb-4">
-          Package R basé sur la transformation de Householder et la décomposition QR.
-        </p>
+        <p class="text-sm text-slate-400 mb-4">Package R basé sur la transformation de Householder et la décomposition QR.</p>
         <a target="_blank" href="https://github.com/Allanroch" class="text-cyan-400 font-semibold">Voir sur GitHub →</a>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="font-bold text-lg mb-2">🏥 Gestion d'hôpital</h4>
+        <p class="text-sm text-slate-400 mb-4">Application web de gestion hospitalière développée principalement en <strong>HTML, CSS et JavaScript</strong>.</p>
+        <a target="_blank" href="https://gestion-hopital-mocha.vercel.app" class="text-cyan-400 font-semibold">🚀 Live Demo (Vercel) →</a>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="font-bold text-lg mb-2">🛍️ Gestion de boutique</h4>
+        <p class="text-sm text-slate-400 mb-4">Application de gestion de boutique réalisée principalement en <strong>HTML, CSS et JavaScript</strong>.</p>
+        <a target="_blank" href="https://gestion-boutique-swart.vercel.app" class="text-cyan-400 font-semibold">🚀 Live Demo (Vercel) →</a>
       </div>
 
     </div>
@@ -216,26 +289,14 @@
       </div>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://github.com/Allanroch" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold">
-          Mon GitHub
-        </a>
-
-        <!-- 🔥 LinkedIn button (remplace ton lien) -->
-        <a href="#" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold">
-          Mon LinkedIn
-        </a>
-
-        <a href="mailto:nenkamallan@gmail.com" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold">
-          M'envoyer un email
-        </a>
+        <a href="https://github.com/Allanroch" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 px-6 py-3 rounded-2xl font-semibold">Mon GitHub</a>
+        <a href="#" target="_blank" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold">Mon LinkedIn</a>
+        <a href="mailto:nenkamallan@gmail.com" class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-6 py-3 rounded-2xl font-semibold">M'envoyer un email</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="text-center py-6 text-sm text-slate-500 border-t border-slate-800">
-    © 2026 Allan Nenkam — Portfolio Data & AI
-  </footer>
+  <footer class="text-center py-6 text-sm text-slate-500 border-t border-slate-800">© 2026 Allan Nenkam — Portfolio Data & AI</footer>
 
   <script>
     const observer = new IntersectionObserver(entries => {
